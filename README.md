@@ -27,20 +27,31 @@ Cada carpeta `NN-tema/` tiene tres archivos:
 - `ejercicio.ts` — el código a completar. Cada `TODO` indica qué falta.
 - `ejercicio.test.ts` — los tests. No se tocan; son la meta a alcanzar.
 
-El flujo es: leer el `README`, completar los `TODO` del `ejercicio.ts` y dejar
-todos los tests en verde.
+El flujo:
+
+1. Leer el `README.md` del tema.
+2. Completar los `TODO` del `ejercicio.ts`. El editor marca los errores de tipo
+   al instante, sobre la línea correspondiente: esa es la guía principal mientras
+   se escribe.
+3. Correr `npm test` para confirmar que los tipos y el comportamiento del tema
+   quedan en verde.
+
+> Los temas se completan **en orden**. Como `npm test` revisa todo el curso,
+> aparecen en rojo los temas que todavía no se completaron: es lo esperado.
 
 ## Comandos
 
 ```bash
-npm test         # corre los tests en modo watch (tipos + comportamiento)
-npm run test:run # corre los tests una sola vez
+npm test         # todo el curso en watch: tipos (--typecheck) + comportamiento
+npm run test:run # lo mismo, una sola vez
 npm run check    # solo revisa tipos con tsc, sin ejecutar tests
 ```
 
 `npm test` valida dos cosas a la vez: que los **tipos** sean correctos
 (`--typecheck`) y que el **comportamiento** en tiempo de ejecución sea el
-esperado.
+esperado. El chequeo de tipos abarca todo el proyecto; por eso, mientras se
+trabaja un tema, el editor es la mejor guía: muestra el error de tipo justo en
+la línea del archivo abierto.
 
 ## Temas
 
