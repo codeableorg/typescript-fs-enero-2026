@@ -1,0 +1,16 @@
+{
+  // Editor del curso. Se silencian las herramientas globales que generan ruido
+  // o reescriben el código, y se conserva el chequeo de tipos de TypeScript,
+  // que es el feedback principal del curso.
+
+  // ESLint no está instalado ni configurado en el proyecto: se apaga para
+  // evitar avisos de reglas globales que chocan con el código de enseñanza.
+  "eslint.enable": false,
+
+  // El corrector ortográfico marca el español y la jerga técnica como errores.
+  "cSpell.enabled": false,
+
+  // Sin formateo automático al guardar: el código se mantiene tal como está
+  // escrito en cada ejercicio, sin reescrituras inesperadas.
+  "editor.formatOnSave": false
+}
