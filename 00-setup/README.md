@@ -114,6 +114,21 @@ pruebas con un solo comando (`npm test`). El `tsconfig.json` del curso usa
 `noEmit: true` porque no hace falta generar `.js`: Vitest corre los `.ts`
 directamente.
 
+## Una demo corrible en el repo
+
+El repositorio incluye una demo mínima del flujo completo en `00-setup/demo/`.
+Desde la raíz del proyecto:
+
+```bash
+npm run demo
+```
+
+Ese comando compila `00-setup/demo/src/index.ts` a
+`00-setup/demo/dist/index.js` y ejecuta el `.js` con Node. Conviene abrir el
+`dist/index.js` generado y comparar: los tipos desaparecieron y quedó
+JavaScript puro. Eso es exactamente lo que se despliega y se ejecuta en una
+aplicación real.
+
 ## Ejercicio
 
 En una carpeta de práctica nueva:

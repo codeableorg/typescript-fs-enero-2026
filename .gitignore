@@ -1,4 +1,7 @@
 node_modules/
 
+# Artefactos compilados (ej. la demo del tema 00)
+dist/
+
 # Material del docente, no se envía al alumno
 TEMARIO.md

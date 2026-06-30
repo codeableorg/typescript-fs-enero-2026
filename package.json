@@ -10,7 +10,10 @@
   "scripts": {
     "test": "vitest --typecheck",
     "test:run": "vitest run --typecheck",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "demo:build": "tsc -p 00-setup/demo",
+    "demo:start": "node 00-setup/demo/dist/index.js",
+    "demo": "npm run demo:build && npm run demo:start"
   },
   "devDependencies": {
     "typescript": "^5.7.0",
