@@ -1,0 +1,19 @@
+{
+  "name": "typescript-fs-enero-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Curso de TypeScript desde las bases: teoría + ejercicios con tests.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest --typecheck",
+    "test:run": "vitest run --typecheck",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
