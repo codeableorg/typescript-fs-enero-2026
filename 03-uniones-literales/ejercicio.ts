@@ -13,6 +13,6 @@ export let talla: string = "md";
 //    - si es texto, devuelve su cantidad de caracteres (`length`);
 //    - si es número, devuelve el número multiplicado por 2.
 //    Anotar el parámetro como unión e implementar usando `typeof`.
-export function describir(valor: any): number {
+export function describir(valor: unknown): number {
   return 0; // TODO
 }

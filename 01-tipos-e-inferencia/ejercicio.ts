@@ -9,11 +9,11 @@ export const enCurso: unknown = true;
 
 // 2. Implementar `saludar`: recibe un nombre y devuelve "Hola, <nombre>".
 export function saludar(nombre: string): string {
-  return ""; // TODO
+  return nombre; // TODO: devolver "Hola, <nombre>"
 }
 
-// 3. Reemplazar `any` por el tipo correcto del parámetro y del retorno,
-//    e implementar la función para que devuelva el doble del número.
-export function doble(n: any): any {
+// 3. El parámetro y el retorno están anotados como `unknown`. Anotar el tipo
+//    correcto e implementar la función para que devuelva el doble del número.
+export function doble(n: unknown): unknown {
   return n; // TODO
 }
