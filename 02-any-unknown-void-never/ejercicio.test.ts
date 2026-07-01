@@ -1,3 +1,7 @@
+// Este archivo es la meta del ejercicio: valida tipos y comportamiento.
+// Mostrará errores en rojo hasta completar `ejercicio.ts`; eso es lo esperado,
+// no un fallo de los tests. No editar este archivo.
+
 import { test, expect, expectTypeOf } from "vitest";
 import { entrada, historial, registrar, fallar } from "./ejercicio";
 
