@@ -1,0 +1,5 @@
+node_modules
+dist
+
+# La teoría de cada tema está formateada a mano; Prettier no la reescribe.
+*.md

@@ -13,9 +13,12 @@
     "check": "tsc --noEmit",
     "demo:build": "tsc -p 00-setup/demo",
     "demo:start": "node 00-setup/demo/dist/index.js",
-    "demo": "npm run demo:build && npm run demo:start"
+    "demo": "npm run demo:build && npm run demo:start",
+    "format": "prettier --write \"**/*.{ts,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,json}\""
   },
   "devDependencies": {
+    "prettier": "^3.4.0",
     "typescript": "^5.7.0",
     "vitest": "^3.0.0"
   }
