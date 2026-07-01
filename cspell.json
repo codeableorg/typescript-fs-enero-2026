@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "es,en",
+  "words": [
+    "Vitest",
+    "vitest",
+    "esbuild",
+    "fnm",
+    "nvmrc",
+    "tsconfig",
+    "tsx",
+    "typecheck",
+    "expectTypeOf",
+    "devDependencies",
+    "runtime",
+    "narrowing",
+    "transpila",
+    "transpilar",
+    "booleano"
+  ]
+}

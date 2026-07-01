@@ -1,16 +1,15 @@
 {
-  // Editor del curso. Se silencian las herramientas globales que generan ruido
-  // o reescriben el código, y se conserva el chequeo de tipos de TypeScript,
-  // que es el feedback principal del curso.
+  // Editor del curso, configurado a nivel proyecto para que sea consistente
+  // entre todos los alumnos, sin depender de la config global de cada uno.
 
-  // ESLint no está instalado ni configurado en el proyecto: se apaga para
-  // evitar avisos de reglas globales que chocan con el código de enseñanza.
-  "eslint.enable": false,
+  // Formateo con Prettier al guardar, usando el .prettierrc del proyecto.
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
-  // El corrector ortográfico marca el español y la jerga técnica como errores.
-  "cSpell.enabled": false,
-
-  // Sin formateo automático al guardar: el código se mantiene tal como está
-  // escrito en cada ejercicio, sin reescrituras inesperadas.
-  "editor.formatOnSave": false
+  // Corrector ortográfico en español e inglés; la jerga técnica del curso se
+  // agrega en cspell.json.
+  "cSpell.language": "es,en"
 }
