@@ -15,6 +15,9 @@ La herramienta que hace ese trabajo es `tsc`, el compilador de TypeScript.
 
 ## 1. Crear el proyecto
 
+En una carpeta **fuera del repo del curso** (por ejemplo, en la carpeta
+personal), crear el proyecto de práctica:
+
 ```bash
 mkdir practica-ts
 cd practica-ts
