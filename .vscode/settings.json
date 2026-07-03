@@ -10,6 +10,8 @@
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
   // Corrector ortográfico en español e inglés; la jerga técnica del curso se
-  // agrega en cspell.json.
-  "cSpell.language": "es,en"
+  // agrega en cspell.json. Se limita a markdown (la teoría): en los `.ts` los
+  // identificadores en español generan ruido sin valor.
+  "cSpell.language": "es,en",
+  "cSpell.enableFiletypes": ["!typescript"]
 }
