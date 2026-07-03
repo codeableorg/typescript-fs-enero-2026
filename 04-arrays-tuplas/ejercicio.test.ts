@@ -3,7 +3,14 @@
 // no un fallo de los tests. No editar este archivo.
 
 import { test, expect, expectTypeOf } from "vitest";
-import { puntajes, coordenada, soloPares } from "./ejercicio";
+import {
+  puntajes,
+  coordenada,
+  soloPares,
+  mezcla,
+  sumar,
+  contarTipos,
+} from "./ejercicio";
 
 test("1 · puntajes es un array de números", () => {
   expectTypeOf(puntajes).toEqualTypeOf<number[]>();
@@ -18,4 +25,22 @@ test("3 · soloPares filtra los números pares", () => {
   expectTypeOf(soloPares).returns.toEqualTypeOf<number[]>();
   expect(soloPares([1, 2, 3, 4])).toEqual([2, 4]);
   expect(soloPares([1, 3, 5])).toEqual([]);
+});
+
+test("4 · mezcla es un array de string | number", () => {
+  expectTypeOf(mezcla).toEqualTypeOf<(string | number)[]>();
+});
+
+test("5 · sumar suma todos los números", () => {
+  expectTypeOf(sumar).parameter(0).toEqualTypeOf<number[]>();
+  expectTypeOf(sumar).returns.toEqualTypeOf<number>();
+  expect(sumar([1, 2, 3])).toBe(6);
+  expect(sumar([])).toBe(0);
+});
+
+test("6 · contarTipos cuenta textos y números", () => {
+  expectTypeOf(contarTipos).parameter(0).toEqualTypeOf<(string | number)[]>();
+  expectTypeOf(contarTipos).returns.toEqualTypeOf<[number, number]>();
+  expect(contarTipos(["a", 1, "b", 2, 3])).toEqual([2, 3]);
+  expect(contarTipos([])).toEqual([0, 0]);
 });
