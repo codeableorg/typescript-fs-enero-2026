@@ -8,8 +8,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "vitest --typecheck",
-    "test:run": "vitest run --typecheck",
+    "test": "vitest",
+    "test:run": "vitest run",
     "check": "tsc --noEmit",
     "demo:build": "tsc -p 00-setup/demo",
     "demo:start": "node 00-setup/demo/dist/index.js",
