@@ -4,35 +4,31 @@
 // Correr `npm test` y dejar todo en verde.
 
 // 1. Anotar el tipo correcto de `titulo` (un texto).
-export let titulo: unknown = "Curso de TypeScript";
+export let titulo = "Curso de TypeScript";
 
 // 2. Anotar el tipo correcto de `anio` (un número) y de `enCurso` (un booleano).
-export let anio: unknown = 2026;
-export let enCurso: unknown = true;
+export let anio: unknown = "carlos";
+export let enCurso = true;
 
 // 3. Implementar `saludar`: recibe un nombre y devuelve "Hola, <nombre>".
 export function saludar(nombre: string): string {
-  return nombre; // TODO: devolver "Hola, <nombre>"
+  return `Hola, ${nombre}`;
 }
 
 // 4. Anotar el parámetro y el retorno de `doble` e implementarla para que
 //    devuelva el doble del número.
-export function doble(n: unknown): unknown {
-  return n; // TODO
+export function doble(n: number): number {
+  return n * 2;
 }
 
 // 5. Implementar `repetir`: devuelve `texto` repetido `veces` veces
 //    (ej. "ab" repetido 3 veces es "ababab").
 export function repetir(texto: string, veces: number): string {
-  return texto + veces; // TODO
+  return texto.repeat(veces);
 }
 
 // 6. Implementar `resumen`: devuelve "<nombre>, <edad> años, <estado>", donde
 //    `estado` es "activo" si `activo` es true, o "inactivo" si es false.
-export function resumen(
-  nombre: string,
-  edad: number,
-  activo: boolean,
-): string {
-  return `${nombre} ${edad} ${activo}`; // TODO
+export function resumen(nombre: string, edad: number, activo: boolean): string {
+  return `${nombre}, ${edad} años, ${activo ? "activo" : "inactivo"}`;
 }
