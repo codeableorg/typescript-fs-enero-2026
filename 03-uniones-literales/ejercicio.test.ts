@@ -20,7 +20,7 @@ test("2 · talla es la unión literal de tallas", () => {
   expectTypeOf(talla).toEqualTypeOf<"sm" | "md" | "lg">();
 });
 
-test("3 · describir distingue texto de número", () => {
+test("3 ·La función describir distingue texto de número", () => {
   expectTypeOf(describir).parameter(0).toEqualTypeOf<string | number>();
   expect(describir("hola")).toBe(4);
   expect(describir("")).toBe(0);
@@ -28,20 +28,20 @@ test("3 · describir distingue texto de número", () => {
   expect(describir(0)).toBe(0);
 });
 
-test("4 · precioTalla devuelve el precio de cada talla", () => {
+test("4 · La función precioTalla devuelve el precio de cada talla", () => {
   expectTypeOf(precioTalla).parameter(0).toEqualTypeOf<"sm" | "md" | "lg">();
   expect(precioTalla("sm")).toBe(10);
   expect(precioTalla("md")).toBe(20);
   expect(precioTalla("lg")).toBe(30);
 });
 
-test("5 · formatear formatea texto y número", () => {
+test("5 ·La función formatear formatea texto y número", () => {
   expectTypeOf(formatear).parameter(0).toEqualTypeOf<string | number>();
   expect(formatear("hola")).toBe("HOLA");
   expect(formatear(5)).toBe("$5");
 });
 
-test("6 · etiqueta combina talla y disponibilidad", () => {
+test("6 · La función etiqueta combina talla y disponibilidad", () => {
   expectTypeOf(etiqueta).parameter(0).toEqualTypeOf<"sm" | "md" | "lg">();
   expect(etiqueta("md", true)).toBe("md (disponible)");
   expect(etiqueta("lg", false)).toBe("lg (agotado)");
