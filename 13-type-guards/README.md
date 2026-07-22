@@ -60,6 +60,26 @@ function procesar(valor: string | number) {
 Con eso, la función **es** un type guard: usarla en un `if` produce narrowing,
 igual que un `typeof` inline, pero con nombre propio y reutilizable.
 
+**Dónde se usa.** Además del `if`, el lugar donde más rinde un guard con nombre
+es **`filter`**: no angosta una rama, angosta el tipo del array completo:
+
+```ts
+type Perro = { nombre: string; ladra: true };
+type Gato = { nombre: string; ronronea: true };
+
+function esPerro(mascota: Perro | Gato): mascota is Perro {
+  return "ladra" in mascota;
+}
+
+declare const mascotas: (Perro | Gato)[];
+
+const perros = mascotas.filter(esPerro);
+// tipo: Perro[] — filtró en runtime Y el tipo del array lo refleja
+```
+
+El mismo guard sirve en el `if` de una rama, en el `filter` de una lista y en
+el `find` de una búsqueda: se escribe una vez, angosta en todos lados.
+
 ## asserts value is Type — funciones de aserción
 
 Un guard devuelve `true`/`false` y se usa con `if`. Una **aserción** no
@@ -85,6 +105,28 @@ function gritar(valor: unknown): string {
 - **Aserción (`asserts`)** → no cumplir el tipo es un **error**: se corta la
   ejecución y el código sigue lineal, sin ramas.
 
+**Dónde se usa.** El caso clásico es el arranque de una aplicación: las
+variables de entorno son `string | undefined`, y sin ellas la app no puede
+funcionar — no hay "segundo camino", hay error:
+
+```ts
+function assertDefinida(
+  valor: string | undefined,
+  nombre: string,
+): asserts valor is string {
+  if (valor === undefined) {
+    throw new Error(`Falta la variable de entorno ${nombre}`);
+  }
+}
+
+const dbUrl = process.env.DB_URL; // string | undefined
+assertDefinida(dbUrl, "DB_URL");
+conectar(dbUrl); // ✅ acá ya es string: la app no arranca a medias
+```
+
+Fallar temprano y con un mensaje claro es mejor que un `undefined` paseándose
+por el sistema hasta explotar lejos de su origen.
+
 ## El caso real: validar datos externos
 
 Donde más brillan los guards propios es al validar datos de afuera (una API,
@@ -108,6 +150,25 @@ function esUsuario(valor: unknown): valor is Usuario {
 Este patrón conecta el tema 02 (`unknown` obliga a comprobar) con todo lo visto
 de narrowing: el guard es la comprobación empaquetada que convierte un
 `unknown` en un tipo confiable.
+
+Y combinado con `filter`, limpia una respuesta entera en una línea:
+
+```ts
+declare const respuestaDeLaApi: unknown[];
+
+const usuarios = respuestaDeLaApi.filter(esUsuario);
+// tipo: Usuario[] — la basura quedó afuera, en runtime y en el tipo
+```
+
+Es exactamente lo que hacen librerías de validación como Zod: definir la forma
+esperada y comprobar `unknown` contra ella. Escribir el guard a mano primero es
+entender la librería antes de usarla.
+
+## Los tres juntos
+
+En [el ejemplo integral](../ejemplo-integral-11-12-13/) los guards custodian la
+frontera de un módulo de usuarios real, y su [demo ejecutable](../ejemplo-integral-11-12-13/demo.ts)
+muestra este `filter` corriendo con datos sucios de verdad.
 
 ## Ejercicio
 
