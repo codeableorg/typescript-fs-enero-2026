@@ -164,12 +164,6 @@ Es exactamente lo que hacen librerías de validación como Zod: definir la forma
 esperada y comprobar `unknown` contra ella. Escribir el guard a mano primero es
 entender la librería antes de usarla.
 
-## Los tres juntos
-
-En [el ejemplo integral](../ejemplo-integral-11-12-13/) los guards custodian la
-frontera de un módulo de usuarios real, y su [demo ejecutable](../ejemplo-integral-11-12-13/demo.ts)
-muestra este `filter` corriendo con datos sucios de verdad.
-
 ## Ejercicio
 
 Abrir `ejercicio.ts` y completar cada `TODO`. Correr `npm test` y dejar los tests
